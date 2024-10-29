@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        /* General styles for buttons */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Edit button styling */
+button:nth-of-type(1) {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+}
+
+button:nth-of-type(1):hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Delete button styling */
+button:nth-of-type(2) {
+    background-color: #f44336; /* Red color */
+    color: white;
+}
+
+button:nth-of-type(2):hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+
+/* Recipe item styling */
+.recipe-item {
+    background-color: #fafafa;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Recipe item content (text and image) */
+.recipe-item img {
+    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.recipe-item h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Styling for recipe list */
+#recipe-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* No recipes message */
+#no-recipes {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    margin-top: 20px;
+}
+
+    </style>
+    <title>Recipe App</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Recipe Book</h1>
+    </nav>
+    <div class="container">
+        <!-- Add recipes form -->
+        <div class="left-column">
+            <h3>Add Recipe</h3>
+            <form id="recipe-form">
+                <label for="recipe-name">Name:</label>
+                <input type="text" id="recipe-name" required>
+                <br>
+                <label for="recipe-ingredients">Ingredients:</label>
+                <textarea id="recipe-ingredients" rows="5" required></textarea>
+                <br>
+                <label for="recipe-method">Method:</label>
+                <textarea id="recipe-method" rows="5" required></textarea>
+                <br>
+                <label for="recipe-image">Image:</label>
+                <input type="file" id="recipe-image" accept="image/*" required>
+                <br>
+                <button type="submit">Add Recipe</button>
+            </form>
+        </div>
+
+        <!-- Search bar/view recipes list -->
+        <div class="right-column">
+            <div id="search-section">
+                <h3>Recipes List</h3>
+                <label for="search-box">Search:</label>
+                <input type="text" id="search-box">
+            </div>
+            <div id="recipe-list"></div>
+            <div id="no-recipes">You have no recipes.</div>
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+
+</html>
