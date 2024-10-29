@@ -5,89 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/styles.css">
+    
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
-        /* General styles for buttons */
-button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
+        /* Navbar styles */
+        nav {
+            background-color: #4CAF50; /* Green background */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* Edit button styling */
-button:nth-of-type(1) {
-    background-color: #4CAF50; /* Green color */
-    color: white;
-}
+        nav h1 {
+            color: white;
+            margin: 0;
+        }
 
-button:nth-of-type(1):hover {
-    background-color: #45a049;
-    transform: scale(1.05);
-}
+        nav .nav-buttons {
+            display: flex;
+        }
 
-/* Delete button styling */
-button:nth-of-type(2) {
-    background-color: #f44336; /* Red color */
-    color: white;
-}
+        nav .nav-buttons a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
 
-button:nth-of-type(2):hover {
-    background-color: #e53935;
-    transform: scale(1.05);
-}
+        nav .nav-buttons a:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
 
-/* Recipe item styling */
-.recipe-item {
-    background-color: #fafafa;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-}
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            margin-top: auto;
+        }
 
-/* Recipe item content (text and image) */
-.recipe-item img {
-    border-radius: 5px;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-}
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-.recipe-item h4 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* Styling for recipe list */
-#recipe-list {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* No recipes message */
-#no-recipes {
-    text-align: center;
-    font-size: 18px;
-    color: #777;
-    margin-top: 20px;
-}
-
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
     </style>
+
     <title>Recipe App</title>
 </head>
 
 <body>
     <nav>
         <h1>Recipe Book</h1>
+        <div class="nav-buttons">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact Us</a>
+        </div>
     </nav>
+
     <div class="container">
         <!-- Add recipes form -->
         <div class="left-column">
@@ -120,6 +110,22 @@ button:nth-of-type(2):hover {
             <div id="no-recipes">You have no recipes.</div>
         </div>
     </div>
+
+    <footer>
+        <p>Follow us on social media</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Recipe App. All rights reserved.</p>
+    </footer>
     <script src="static/script.js"></script>
 </body>
 

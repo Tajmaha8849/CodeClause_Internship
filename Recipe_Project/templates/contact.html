@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Contact Us - Recipe App</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure full height */
+        }
+
+        
+        nav {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav h1 {
+            margin: 0;
+        }
+
+        .nav-buttons a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #444;
+        }
+
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items in the container */
+            justify-content: center; /* Center items vertically */
+            height: 100vh; /* Full height of the viewport */
+            max-width: 800px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center align text inside the container */
+        }
+
+        
+        h2 {
+            margin-top: 0;
+            font-size: 50px; /* Increased font size */
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align form elements */
+            max-width: 400px; /* Limit form width */
+            width: 100%; /* Full width for inputs */
+            margin-top: 20px; /* Add space above the form */
+        }
+
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold; /* Make label bold */
+            align-self: flex-start; /* Align label to the start */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 16px; /* Increased font size for better readability */
+            width: 100%; /* Full width for inputs */
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50; /* Green color */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px; /* Increased font size */
+            width: 100%; /* Full width for button */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        .social-icons {
+            margin: 10px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px; /* Font size for social media icons */
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #ddd; /* Change color on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-buttons {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Recipe Book</h1>
+        <div class="nav-buttons">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feedback, or suggestions, please feel free to reach out!</p>
+        
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Follow us on social media</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Recipe App. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
