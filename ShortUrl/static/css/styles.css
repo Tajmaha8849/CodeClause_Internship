@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    padding: 15px 0;
+    color: white;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #4CAF50;
+}
+
+/* Content Styles */
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 120px auto 80px; /* Adjusted for header and footer */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 60px;
+}
+
+/* Welcome Section */
+.welcome {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome h2 {
+    color: #333;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Form Section */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="url"], input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+/* Content Pages Styling */
+.page-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 120px auto 80px; /* Adjusted for header and footer */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+}
+
+.page-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.page-container p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: #fff; /* White text */
+    padding: 5px; /* Spacing inside footer */
+    text-align: center; /* Center text */
+}
+
+.footer-content {
+    max-width: 1200px; /* Limit width */
+    margin: 0 auto; /* Center footer content */
+}
+
+.footer-links {
+    list-style: none; /* Remove bullet points from list */
+    padding: 0; /* Remove padding */
+    margin: 10px 0; /* Add vertical spacing */
+    display: inline-flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.footer-links li {
+    margin: 0 10px; /* Spacing between links */
+}
+
+.footer-links span {
+    color: #ccc; /* Light color for separator */
+    margin: 0 5px; /* Spacing around separator */
+}
+
+.social-icons {
+    margin-top: 10px; /* Spacing above social icons */
+}
+
+.social-icons a {
+    color: #fff; /* White icons */
+    margin: 0 10px; /* Spacing between icons */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.social-icons a:hover {
+    color: #ccc; /* Change color on hover */
+}

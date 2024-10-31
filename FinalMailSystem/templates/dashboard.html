@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2>Welcome, {{ session['username'] }}!</h2>
+        <p><a href="{{ url_for('logout') }}" class="btn btn-danger btn-sm">Logout</a></p>
+
+        <!-- Alert Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if message != "You have been logged out." and message != "Login successful!" %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+
+        <!-- Send Mail Form -->
+        <h3>Send an Email</h3>
+        <form method="POST" action="{{ url_for('send_mail') }}">
+            <div class="mb-3">
+                <label for="from_address" class="form-label">From Address</label>
+                <input type="email" class="form-control" id="from_address" name="from_address" required>
+            </div>
+            <div class="mb-3">
+                <label for="app_password" class="form-label">App Password</label>
+                <input type="password" class="form-control" id="app_password" name="app_password" required>
+                <!-- Link to open the app password guide modal -->
+                <small>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#appPasswordGuideModal">How to get an app password?</a>
+                </small>
+            </div>
+            <div class="mb-3">
+                <label for="to_address" class="form-label">To Address</label>
+                <input type="email" class="form-control" id="to_address" name="to_address" required>
+            </div>
+            <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" name="subject">
+            </div>
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <textarea class="form-control" id="body" name="body" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Email</button>
+        </form>
+
+        <!-- Sent Emails List -->
+        <h3 class="mt-5">Sent Emails</h3>
+        <ul class="list-group">
+            {% for email in sent_emails %}
+                <li class="list-group-item">
+                    <strong>To:</strong> {{ email.to_address }} <br>
+                    <strong>Subject:</strong> {{ email.subject }} <br>
+                    <strong>Body:</strong> {{ email.body }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Modal for App Password Guide -->
+    <div class="modal fade" id="appPasswordGuideModal" tabindex="-1" aria-labelledby="appPasswordGuideModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="appPasswordGuideModalLabel">How to Get an App Password from Gmail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ol>
+                        <li>Log in to your <strong>Google Account</strong> at <a href="https://myaccount.google.com/" target="_blank">myaccount.google.com</a>.</li>
+                        <li>Select <strong>Security</strong> from the left-hand menu.</li>
+                        <li>Under <strong>Signing in to Google</strong>, find and select <strong>App Passwords</strong>.</li>
+                        <li>If prompted, sign in again to confirm your identity.</li>
+                        <li>In the App Passwords section, choose the app and device for which you want to generate a password.</li>
+                        <li>Click on <strong>Generate</strong> to create the app password. A 16-character code will appear.</li>
+                        <li>Copy the code and paste it into the App Password field on this page. This code replaces your Google account password for app authentication.</li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
